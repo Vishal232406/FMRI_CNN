@@ -13,7 +13,6 @@ from tqdm import tqdm
 
 # nii paths
 IMGS: List[Path] = sorted(Path(__file__).resolve().parent.rglob("*.nii"))
-# IMGS: List[Path] = sorted(glob.glob("E:/IMP/CSCI595/FMRI/CMU/*.nii"))
 # Path to a custom csv file with the file name, subject id, and diagnosis
 ANNOTATIONS: DataFrame = pd.read_csv(Path(__file__).resolve().parent / "NEW_FMRI.csv")
 FmriSlice = Tuple[int, int, int, int]  # just a convencience type to save space
@@ -33,11 +32,7 @@ class RandomFmriDataset(Dataset):
     transform: Optional[Callable] = None
         The transform to apply to the 4D array.
 
-    Notes
-    -----
-    This random loader is much simpler to implement and understand, but is a bit unusual. You may
-    find it helpful to read through.
-    """
+   """
     def __init__(
         self,
         patch_shape: Optional[FmriSlice] = None,
