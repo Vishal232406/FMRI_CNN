@@ -9,7 +9,7 @@ from numpy import vstack
 from sklearn.metrics import accuracy_score
 import numpy as np
 from matplotlib import pyplot as plt
-from sklearn.metrics import confusion_matrix, plot_confusion_matrix
+
 
 
 from dataloader import RandomFmriDataset
